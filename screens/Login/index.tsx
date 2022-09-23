@@ -23,11 +23,16 @@ export default function Login({navigation}){
                 setSenha("");
             }} style={styles.btnlogin}>
                 <AntDesign name="login" size={20} color="white"/>
-                <Text style={{color:"white"}}>ACESSAR</Text>
-            </TouchableOpacity>
+                <Text style={{color:"white"}}> Acessar</Text>
+           </TouchableOpacity> 
             {/* Cadastrar */}
 
             <TouchableOpacity onPress={()=>navigation.navigate("Cadastro")} style={styles.btncadastro}>
+                <AntDesign name="save" size={20} color="white"/>
+                <Text style={{color:"white"}}> Cadastrar</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={()=>navigation.navigate("CasasAdocao")} style={styles.btncadastro}>
                 <AntDesign name="save" size={20} color="white"/>
                 <Text style={{color:"white"}}>Cadastrar</Text>
             </TouchableOpacity>

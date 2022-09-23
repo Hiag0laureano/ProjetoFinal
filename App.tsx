@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './screens/Login';
 import Cadastro from './screens/Cadastro';
 import Home from './screens/Home';
+import Lares from './screens/Casas_disponiveis';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} options={{headerShown:false}}/>
         <Stack.Screen name="Cadastro" component={Cadastro}/>
+        <Stack.Screen name="CasasAdocao" component={Lares}/>
         <Stack.Screen name="Home" component={Home} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
