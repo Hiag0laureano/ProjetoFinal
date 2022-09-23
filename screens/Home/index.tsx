@@ -19,7 +19,7 @@ export default function Home (){
 
 function Inicio({navigation}){
     return(
-        <View style={{flex:1}}>
+        <View style={{flex:5}}>
             <Header/>
             <ScrollView horizontal={false}>
                 <Panel/>
