@@ -1,40 +1,33 @@
-import { View } from "react-native";
-import { ipserver2 } from "../../../config/servidor";
+import { Image, Text, View } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+
 
 export default function Main(props:any){
-    const [produto, setProduto] = useState({
-        idproduto:"",
-        nomeproduto:"",
-        descricao:"",
-        categoria:"",
-        preco:"",
-        foto1:"",
-        foto2:"",
-        foto3:"",
-        foto4:""
-    })
-    
-    useEffect(()=>{
-        fetch(`${ipserver2}/produto/pesquisar/${props.id}`)
-        .then((response)=>response.json())
-        .then((rs)=>setProduto(rs))
-        .catch((erro)=>console.error(`Erro ao tentar conectar na api -> ${erro}`))
-    },[])
-
     return(
-        <View style={styles.main}>
-            <Image source={{uri:`${produto.foto1}`}} style={{width:"100%",height:150,resizeMode:"cover"}}/>
-            <View style={styles.infoproduto}>
-                <Text>{produto.nomeproduto}</Text>
-                <Text>{produto.categoria}</Text>
-                <Text>{produto.descricao}</Text>
-                <Text>{produto.preco}</Text>
-
-                <TouchableOpacity onPress={()=>alert("OI")} style={styles.btncarrinho}>
-                    <FontAwesome name="shopping-cart" size={24} color="white"/>
-                    <Text>Adicionar ao carinho</Text>
-                </TouchableOpacity>
+        <View>
+             <View>
+        <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",alignSelf:"center", marginTop:10}}>
+                <Image source={require("../../../../assets/casa_adocao_1.png" )}style={{width:70, height:70}}/>
+                <View style={{alignItems:"flex-start"}}>
+                    <Text style={{marginTop:10, marginLeft:25, fontSize:22}}>Abrigo Balaio de Gato</Text>
+                    <Text style={{marginLeft:25,color:"silver", fontSize:16}}>Guaianases, São Paulo, SP</Text>
+                </View>
+                <AntDesign style={{alignSelf:"center",marginLeft:40}}>
+                <AntDesign name="right" size={25} color="blue"/>
+                </AntDesign>
             </View>
+
+            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",alignSelf:"center", marginTop:10}}>
+                <Image source={require("../../../../assets/casa_adocao_1.png" )}style={{width:70, height:70}}/>
+                <View style={{alignItems:"flex-start"}}>
+                    <Text style={{marginTop:10, marginLeft:25, fontSize:22}}>Abrigo Balaio de Gato</Text>
+                    <Text style={{marginLeft:25,color:"silver", fontSize:16}}>Guaianases, São Paulo, SP</Text>
+                </View>
+                <AntDesign style={{alignSelf:"center",marginLeft:40}}>
+                <AntDesign name="right" size={25} color="blue"/>
+                </AntDesign>
+            </View>
+         </View>
         </View>
     )
 }

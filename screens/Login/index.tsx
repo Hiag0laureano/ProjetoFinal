@@ -31,11 +31,6 @@ export default function Login({navigation}){
                 <AntDesign name="save" size={20} color="white"/>
                 <Text style={{color:"white"}}> Cadastrar</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity onPress={()=>navigation.navigate("CasasAdocao")} style={styles.btncadastro}>
-                <AntDesign name="save" size={20} color="white"/>
-                <Text style={{color:"white"}}>Cadastrar</Text>
-            </TouchableOpacity>
         </View>
         </ImageBackground>
     )
