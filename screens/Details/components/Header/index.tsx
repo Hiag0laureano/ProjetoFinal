@@ -1,7 +1,9 @@
-import { View } from "react-native";
+import { View,Image } from "react-native";
 
 export default function Header(){
     return(
-        <View></View>
+        <View style={{flex:0.3,justifyContent:"center",alignItems:"center",backgroundColor:"#62c2b7",paddingTop:30 }}>
+         <Image source={require("../../../../assets/logo2.png")} style={{width:200, height:100}}/>
+        </View>
     )
 }
