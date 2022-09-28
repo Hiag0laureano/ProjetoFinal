@@ -16,7 +16,7 @@ export default function Cadastro() {
 
 
     return (
-        <ImageBackground style={{width:"100%", height:"100%"}} source={require("../../assets/backlogin2.png")}>
+        <ImageBackground style={{width:"100%", height:"100%"}} source={require("../../assets/backlogin4.png")}>
         <View style={styles.cadastro}>
 
             <TextInput
