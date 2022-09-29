@@ -4,7 +4,7 @@ export default function Main(){
     return(
         <View style={{flex:1,}}>
              <Image source={require("../../../../assets/panelSobre.png")}style={{width:415, height:150}}></Image>
-            <View style={{height:"30%", padding:5}}> 
+            <View style={{height:"30%", padding:10, alignItems:"center"}}> 
                 <Text>
                 <Text style={{color:"black", fontSize: 27, textAlign: "center"}}>Somos a Dog Especial. O app </Text>
                 <Text style={{color:"red", fontSize:32}}>mais</Text>

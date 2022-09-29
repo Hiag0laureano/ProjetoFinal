@@ -11,7 +11,7 @@ export default function Login({navigation}){
         <ImageBackground style={{width:"100%", height:"100%"}} source={require("../../assets/backlogin4.png")}>
         <View style={styles.login}>
             
-            <Image source={require("../../assets/logo.png")} style={{width:200,height:200, marginBottom:50}}/>
+            <Image source={require("../../assets/NovoLogo.png")} style={{width:200,height:200, marginBottom:50}}/>
             
             <TextInput placeholder="Usuario" style={styles.caixa}value={usuario}onChangeText={(value)=>setUsuario(value)}/>
             <TextInput placeholder="Senha" style={styles.caixa} secureTextEntry value={senha}onChangeText={(value)=>setSenha(value)}/>
