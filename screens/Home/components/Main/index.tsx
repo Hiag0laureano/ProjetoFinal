@@ -16,7 +16,6 @@ export default function Main(props:any){
                 </AntDesign>
             </View>
             </TouchableOpacity>
-
             <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",}}>
                 <Image source={require("../../../../assets/iconDogCat.png" )}style={{width:70, height:70}}/>
                 <View style={{alignItems:"flex-start", alignSelf: "center"}}>
