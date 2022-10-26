@@ -7,6 +7,7 @@ import SobreNos from "../SobreNos";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Panel from "./components/Panel";
+import Pefil from "../Perfil";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,9 @@ export default function Home (){
                 
                 <Stack.Screen name="Fale" component={Fale} options={{headerShown:false}}/>
                 <Stack.Screen name="Contato" component={Contato} options={{headerShown:false}}/>
+
+                <Stack.Screen name="Usuario" component={Usuario} options={{headerShown:false}}/>
+                <Stack.Screen name="Perfil" component={Pefil} options={{headerShown:false}}/>
             </Stack.Navigator>
         </NavigationContainer>
 
@@ -57,6 +61,18 @@ function Sobre({navigation}){
 
 
 function Fale({navigation}){
+    return(
+        <View style={{flex:1}}>
+            <Header/>
+            <ScrollView horizontal={false}>
+                <Panel/>
+                <Main tela={navigation}/>
+            </ScrollView>
+        </View>
+    )
+}
+
+function Usuario({navigation}){
     return(
         <View style={{flex:1}}>
             <Header/>
