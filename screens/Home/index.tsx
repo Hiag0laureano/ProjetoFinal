@@ -8,10 +8,21 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Panel from "./components/Panel";
 import Pefil from "../Perfil";
+import { useState } from "react";
 
 const Stack = createNativeStackNavigator();
 
-export default function Home (){
+
+let dt = "";
+
+export default function Home ({route}){
+
+    const {idUsuario} = route.params
+
+    console.log(`Tela Home ${idUsuario}`)
+
+     dt = idUsuario;
+
     return(
         <NavigationContainer independent={true}>
             <Stack.Navigator>
@@ -40,7 +51,7 @@ function Inicio({navigation}){
             <Header/>
             <ScrollView horizontal={false}>
                 <Panel/>
-                <Main tela={navigation}/>
+                <Main tela={navigation} dados={dt}/>
             </ScrollView>
         </View>
     )

@@ -2,10 +2,15 @@ import { Image, Text, View,TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 export default function Main(props:any){
+
+    let dt = props.dados;
+
+    console.log(`dados do usuario ${dt}`)
+
     return(
         <View style={{flex:5, padding:10, backgroundColor:"#E2E0E0"}}>
             <TouchableOpacity onPress={()=>props.tela.navigate("Details")}>               
-            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",}}>
+            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
                 <Image source={require("../../../../assets/iconHouse.png" )}style={{width:70, height:70}}/>
                 <View style={{alignItems:"flex-start", alignSelf: "center"}}>
                     <Text style={{marginLeft:30, fontSize:22}}>UM LAR PARA PETS</Text>
@@ -16,7 +21,7 @@ export default function Main(props:any){
                 </AntDesign>
             </View>
             </TouchableOpacity>
-            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",}}>
+            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
                 <Image source={require("../../../../assets/iconDogCat.png" )}style={{width:70, height:70}}/>
                 <View style={{alignItems:"flex-start", alignSelf: "center"}}>
                     <Text style={{marginLeft:30, fontSize:22}}>PETS PARA ADOÇÃO</Text>
@@ -27,7 +32,7 @@ export default function Main(props:any){
                 </AntDesign>
             </View>
 
-            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",}}>
+            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
                 <Image source={require("../../../../assets/hallPet.png" )}style={{width:70, height:70}}/>
                 <View style={{alignItems:"flex-start", alignSelf: "center"}}>
                     <Text style={{marginLeft:30, fontSize:22}}>HALL PETS ADOTADOS</Text>
@@ -39,7 +44,7 @@ export default function Main(props:any){
             </View>
 
             <TouchableOpacity onPress={()=>props.tela.navigate("Perfil")}>   
-            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",}}>
+            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
                 <Image source={require("../../../../assets/sobreNos.png" )}style={{marginTop:10,width:70, height:60}}/>
                 <View style={{alignItems:"flex-start", alignSelf: "center"}}>
                     <Text style={{marginLeft:30, fontSize:22}}>PERFIL</Text>
@@ -52,7 +57,7 @@ export default function Main(props:any){
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>props.tela.navigate("Contato")}>   
-            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",}}>
+            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
                 <Image source={require("../../../../assets/userDog.png" )}style={{width:70, height:80}}/>
                 <View style={{alignItems:"flex-start", alignSelf: "center"}}>
                     <Text style={{marginLeft:30, fontSize:22}}>CONTATO</Text>
@@ -66,7 +71,7 @@ export default function Main(props:any){
             
 
             <TouchableOpacity onPress={()=>props.tela.navigate("SobreNos")}>   
-            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",}}>
+            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
                 <Image source={require("../../../../assets/sobreNos.png" )}style={{marginTop:10,width:70, height:60}}/>
                 <View style={{alignItems:"flex-start", alignSelf: "center"}}>
                     <Text style={{marginLeft:30, fontSize:22}}>SOBRE NÓS</Text>
