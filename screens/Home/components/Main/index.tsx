@@ -43,7 +43,7 @@ export default function Main(props:any){
                 </AntDesign>
             </View>
 
-            <TouchableOpacity onPress={()=>props.tela.navigate("Perfil")}>   
+            <TouchableOpacity onPress={()=>props.tela.navigate("Perfil",{idUsuario:dt})}>   
             <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
                 <Image source={require("../../../../assets/sobreNos.png" )}style={{marginTop:10,width:70, height:60}}/>
                 <View style={{alignItems:"flex-start", alignSelf: "center"}}>

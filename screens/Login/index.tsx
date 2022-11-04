@@ -25,7 +25,7 @@ export default function Login({navigation}){
                         if (rs.output=="Logado"){
                             Alert.alert("Logado")
                             console.log(`Tela Login ->${rs}`)
-                            navigation.navigate("Home",{idUsuario:rs.payload});
+                            navigation.navigate("Home",{idUsuario:rs.payload[0].idUsuario});
                             setUsuario("");
                             setSenha("");
                         }
@@ -69,7 +69,7 @@ async function efetuarLogin(usuario:any, senha:any){
      .then((rs)=>{
          console.log(rs);
          // Alert.alert("Acesso","Você está logado")
-         result = rs[0];
+         result = rs;
      })
      .catch((erro)=>console.error(`Erro na api -> ${erro}`));
      return result;
