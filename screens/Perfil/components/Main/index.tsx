@@ -1,4 +1,4 @@
-import { View,Image, Text } from "react-native";
+import { View,Image, Text, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
 import { ipserver } from "../../../config/servidor";
@@ -8,7 +8,6 @@ export default function Main(props:any){
 
     let dt = props.dados;
 
-    console.log(`dentro da tela de perfil ${dt}`)
 
 
     const [cliente, setCliente] = useState({
@@ -78,7 +77,8 @@ export default function Main(props:any){
                 <AntDesign name="right" size={25} color="blue"/>
                 </AntDesign>
             </View>
-
+            
+            <TouchableOpacity onPress={()=>props.tela.navigate("PubliHall")}>
             <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
                 <MaterialIcons name="post-add" size={50} color="orange" style={{alignSelf:"center"}}/>
                 <View style={{alignItems:"flex-start", alignSelf: "center"}}>
@@ -89,6 +89,7 @@ export default function Main(props:any){
                 <AntDesign name="right" size={25} color="blue"/>
                 </AntDesign>
             </View>
+            </TouchableOpacity>
            
             </View>
         </View>

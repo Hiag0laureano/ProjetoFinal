@@ -1,7 +1,12 @@
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ScrollView, Text, View } from "react-native";
+import PubliHall from "../PubliHall";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
+
+const Stack = createNativeStackNavigator();
 
 let dt = "";
 
@@ -14,10 +19,23 @@ console.log(`Tela Perfil ${idUsuario}`)
 dt = idUsuario;
 
     return(
-        <View style={{flex:1}}>
+        <NavigationContainer independent={true}>
+             <Stack.Navigator>
+                <Stack.Screen name="telaPerfil" component={telaPerfil} options={{headerShown:false}}/>
+                <Stack.Screen name="PubliHall" component={PubliHall} options={{headerShown:false}}/>
+
+            </Stack.Navigator>
+        </NavigationContainer>
+        
+    )
+}
+
+function telaPerfil({navigation}){
+    return(
+    <View style={{flex:1}}>
             <Header/>
             <ScrollView horizontal={false}>
-                <Main dados={dt}/>
+                <Main tela={navigation}  dados={dt}/>
             </ScrollView>
         </View>
     )

@@ -9,6 +9,7 @@ import Main from "./components/Main";
 import Panel from "./components/Panel";
 import Pefil from "../Perfil";
 import { useState } from "react";
+import HallPet from "../HallPet";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,9 @@ export default function Home ({route}){
 
                 <Stack.Screen name="Usuario" component={Usuario} options={{headerShown:false}}/>
                 <Stack.Screen name="Perfil" component={Pefil} options={{headerShown:false}}/>
+
+                <Stack.Screen name="Post" component={Post} options={{headerShown:false}}/>
+                <Stack.Screen name="HallPet" component={HallPet} options={{headerShown:false}}/>
             </Stack.Navigator>
         </NavigationContainer>
 
@@ -84,6 +88,18 @@ function Fale({navigation}){
 }
 
 function Usuario({navigation}){
+    return(
+        <View style={{flex:1}}>
+            <Header/>
+            <ScrollView horizontal={false}>
+                <Panel/>
+                <Main tela={navigation}/>
+            </ScrollView>
+        </View>
+    )
+}
+
+function Post({navigation}){
     return(
         <View style={{flex:1}}>
             <Header/>

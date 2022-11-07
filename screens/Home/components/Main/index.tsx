@@ -32,6 +32,7 @@ export default function Main(props:any){
                 </AntDesign>
             </View>
 
+            <TouchableOpacity onPress={()=>props.tela.navigate("HallPet")}> 
             <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
                 <Image source={require("../../../../assets/hallPet.png" )}style={{width:70, height:70}}/>
                 <View style={{alignItems:"flex-start", alignSelf: "center"}}>
@@ -42,6 +43,7 @@ export default function Main(props:any){
                 <AntDesign name="right" size={25} color="blue"/>
                 </AntDesign>
             </View>
+            </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>props.tela.navigate("Perfil",{idUsuario:dt})}>   
             <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
