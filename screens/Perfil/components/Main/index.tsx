@@ -1,4 +1,4 @@
-import { View,Image, Text, TouchableOpacity } from "react-native";
+import { View,Image, Text, TouchableOpacity,ActivityIndicator } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
 import { ipserver } from "../../../config/servidor";
@@ -8,33 +8,39 @@ export default function Main(props:any){
 
     let dt = props.dados;
 
+    const [carregando, setCarregando] = useState(true);
 
 
     const [cliente, setCliente] = useState({
-        idCliente: "",
-        nomeCliente:"" ,
-        foto:"",
-        tipo:"",
-        logradouro:"",
-        sexo: "",
-        dataNascimento: "",
-        email: "",
-        telefoneCelular:"",
-        telefoneResidencial:"",
-        nomeUsuario:"" 
+       
     })
 
     useEffect(()=>{
         fetch(`${ipserver}/cliente/listar/${dt}`)
         .then((response)=>response.json())
-        .then((rs)=>setCliente(rs.output[0]))
+        .then((rs)=>{
+            
+            setCliente(rs.output[0]) 
+           
+                setCarregando(false)
+           
+            
+        }
+           
+            )
         .catch((erro)=>console.error(`Erro ao tentar conectar na api -> ${erro}`))
     },)
     return(
         <View>
+        {
+            carregando?(<ActivityIndicator color="black" size="large"/>):(
+                <View>
             <Image source={require("../../../../assets/Perfil.png")}style={{width:412, height:152}}></Image>
             <View style={{alignItems:"center",justifyContent:"center", marginTop:20}}>
+               
+                
                 <Image source={{uri:`${cliente.foto}`}} style={{width:150, height:150,borderRadius:100}}/>
+                
             </View>
             <View style={{alignItems:"center", marginTop:10}}>
                 <Text style={{fontSize:30}}>{cliente.nomeCliente}</Text>
@@ -66,7 +72,7 @@ export default function Main(props:any){
                 </View>
                 </View>
 
-                 
+            <TouchableOpacity onPress={()=>props.tela.navigate("Editar",{idUsuario:dt})}>
             <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
                 <AntDesign name="setting" size={50} color="orange" style={{alignSelf:"center"}}/>
                 <View style={{alignItems:"flex-start", alignSelf: "center"}}>
@@ -77,6 +83,7 @@ export default function Main(props:any){
                 <AntDesign name="right" size={25} color="blue"/>
                 </AntDesign>
             </View>
+            </TouchableOpacity>
             
             <TouchableOpacity onPress={()=>props.tela.navigate("PubliHall")}>
             <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
@@ -92,6 +99,7 @@ export default function Main(props:any){
             </TouchableOpacity>
            
             </View>
+        </View>)}
         </View>
     )
 }
