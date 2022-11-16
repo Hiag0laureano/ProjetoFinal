@@ -31,11 +31,13 @@ export default function Main(){
                  </View>
                  </TouchableOpacity>
 
-
+                 <TouchableOpacity  onPress={() => Linking.openURL('mailto:dogespecialapp@gmail.com?subject=SendMail&body=Description')}>
                  <View style={{backgroundColor:"white", height:100, width:400,borderRadius:20, padding:10,flexDirection:"row", marginTop:20}}>
                     <MaterialIcons name="email" size={40} color="#d15b28" style={{marginTop:20}} />
                     <Text style={{marginTop:30, marginLeft:20, fontSize:20, color:"#460c00"}}>EMAIL</Text>
                  </View>
+                 </TouchableOpacity>
+                 
                 
                  <TouchableOpacity  onPress={copyToClipboard}>
                  <View style={{backgroundColor:"white", height:100, width:400,borderRadius:20, padding:10,flexDirection:"row", marginTop:20}}>

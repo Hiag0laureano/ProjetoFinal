@@ -8,11 +8,7 @@ export default function Cadastro() {
 
     const [usuario, setUsuario] = useState("");
     const [senha, setSenha] = useState("");
-    const [nomeCompleto, setNomeCompleto] = useState("");
-    const [cpf, setCPF] = useState("");
-    const [email, setEmail] = useState("");
-    const [endereco, setEndereco] = useState("");
-
+   
 
 
     return (
@@ -34,36 +30,9 @@ export default function Cadastro() {
                 value={senha}
                 onChangeText={(value) => setSenha(value)}
             />
-            <TextInput
-                placeholder="Nome Completo"
-                style={styles.caixa}
-                value={nomeCompleto}
-                onChangeText={(value) => setNomeCompleto(value)}
-            />
-            <TextInput
-                placeholder="CPF"
-                style={styles.caixa}
-                keyboardType="number-pad"
-                value={cpf}
-                onChangeText={(value) => setCPF(value)}
-            />
-            <TextInput
-                placeholder="Email"
-                style={styles.caixa}
-                keyboardType="email-address"
-                value={email}
-                onChangeText={(value) => setEmail(value)} />
-            
-
-            <TextInput
-                placeholder="Endereço"
-                style={styles.caixa}
-                value={endereco}
-                onChangeText={(value) => setEndereco(value)} />
-            
 
             <TouchableOpacity onPress={() =>{
-                efetuarCadastro(usuario,senha,nomeCompleto,cpf,email,endereco)
+                efetuarCadastro(usuario,senha)
             }} style={styles.btncadastro}>
                 <AntDesign name="save" size={20} color="white" />
                 <Text style={{color:"white"}}>Cadastrar</Text>
@@ -74,33 +43,26 @@ export default function Cadastro() {
 }
 
 
-function efetuarCadastro(usuario:any,senha:any,nome:any, cpf:any, email:any,endereco:any){
+function efetuarCadastro(usuario:any,senha:any){
     
     if(usuario=="" ||
-    senha=="" || 
-    nome == "" || 
-    cpf =="" ||
-    email == "" ||
-    endereco=="") {
+    senha==""  
+    ) {
         return Alert.alert("Você deve preencher todos os campos");
     }
-    fetch(`${ipserver}/usuarios/cadastro`,{
+    fetch(`${ipserver}/usuario/cadastro`,{
         method:"POST",
         headers:{
             accept:"application/json",
             "content-type":"application/json"
         },
         body:JSON.stringify({
-            nomeusuario:usuario,
-            senha:senha,
-            nomecompleto:nome,
-            cpf:cpf,
-            email:email,
-            endereco:endereco
+            nomeUsuario:usuario.toLowerCase().trim(),
+            senha:senha
         })
     })
     .then((response)=>response.json())
-    .then((rs)=>console.log(rs))
+    .then((rs)=>Alert.alert("Usuario cadastrado com sucesso"))
     .catch((erro)=>console.error(`Erro ao tentar acessar a api -> ${erro}`))
   
 }

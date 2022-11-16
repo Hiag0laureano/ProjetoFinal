@@ -21,16 +21,6 @@ export default function Main(props:any){
                 </AntDesign>
             </View>
             </TouchableOpacity>
-            <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>
-                <Image source={require("../../../../assets/iconDogCat.png" )}style={{width:70, height:70}}/>
-                <View style={{alignItems:"flex-start", alignSelf: "center"}}>
-                    <Text style={{marginLeft:30, fontSize:22}}>PETS PARA ADOÇÃO</Text>
-                    <Text style={{marginLeft:30,color:"silver", fontSize:14}}>Veja os animais disponiveis{'\n'}para adoção</Text>
-                </View>
-                <AntDesign style={{alignSelf:"center",marginLeft:36}}>
-                <AntDesign name="right" size={25} color="blue"/>
-                </AntDesign>
-            </View>
 
             <TouchableOpacity onPress={()=>props.tela.navigate("HallPet")}> 
             <View style={{height:100, width:390, backgroundColor:"white",padding:15,borderRadius:20, flexDirection:"row",marginBottom:20, marginTop:10,alignSelf:"center",justifyContent:"space-between"}}>

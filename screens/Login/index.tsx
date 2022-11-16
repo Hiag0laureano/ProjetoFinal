@@ -23,7 +23,7 @@ export default function Login({navigation}){
                     }
                     efetuarLogin(Usuario,senha).then((rs)=>{
                         if (rs.output=="Logado"){
-                            Alert.alert("Logado")
+                            Alert.alert("Você esta logado")
                             console.log(`Tela Login ->${rs}`)
                             navigation.navigate("Home",{idUsuario:rs.payload[0].idUsuario});
                             setUsuario("");
