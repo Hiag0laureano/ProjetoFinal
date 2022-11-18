@@ -18,7 +18,7 @@ let en = "";
 let CEP = "";
 let cmp = "";
 let br = "";
-let cd = "";
+let ci = "";
 let es = "";
 let tlR = "";
 let idD = "";
@@ -54,7 +54,7 @@ export default function Main(props:any){
     const [complemento, setComplemento] = useState(cmp);
     const [endereco, setEndereco] = useState(en);
     const [bairro, setBairro] = useState(br);
-    const [cidade, setCidade] = useState(cd);
+    const [cidade, setCidade] = useState(ci);
     const [estado, setEstado] = useState(es);
 
     useEffect(()=>{
@@ -72,7 +72,7 @@ export default function Main(props:any){
             CEP=rs.output[0].cep;
             cmp=rs.output[0].complemento;
             br=rs.output[0].bairro;
-            cd=rs.output[0].cidade;
+            ci=rs.output[0].cidade;
             es=rs.output[0].estado;
             idD=rs.output[0].idDadosPessoais;
             CPF=rs.output[0].cpf;
